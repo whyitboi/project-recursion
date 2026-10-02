@@ -3,9 +3,9 @@ function merge(leftHalfArray, rightHalfArray) {
   let result = [];
   //use while loop to check while both arrays are not empty
   while (leftHalfArray.length > 0 && rightHalfArray.length > 0) {
-    leftHalfArray[0] >= rightHalfArray[0]
-      ? result.push(rightHalfArray.shift())
-      : result.push(leftHalfArray.shift());
+    leftHalfArray[0] <= rightHalfArray[0]
+      ? result.push(leftHalfArray.shift())
+      : result.push(rightHalfArray.shift());
   }
   //use destructing to return
   return [...result, ...leftHalfArray, ...rightHalfArray];
