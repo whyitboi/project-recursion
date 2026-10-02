@@ -16,7 +16,7 @@ function fibsSequence(n) {
   if (Number.isInteger(n) && n > 2) {
     nIsTwo();
 
-    for (let i = 2; i <= n - 1; i++) {
+    for (let i = 2; i < n; i++) {
       result.push(result[i - 1] + result[i - 2]);
     }
   }
@@ -28,7 +28,11 @@ function fibsNumber(n) {
   if (n === 2) return 1;
 
   if (Number.isInteger(n) && n > 2) {
-    return n - 1 + (n - 2);
+    let a = [0, 1];
+    for (let i = 2; i < n; i++) {
+      a.push(a[i - 1] + a[i - 2]);
+    }
+    return a[n - 1];
   }
 }
 
@@ -51,3 +55,5 @@ function fibSequenceRec(n) {
 }
 
 console.log(fibSequenceRec(6));
+console.log(fibsNumber(5));
+console.log(fibsSequence(6));
