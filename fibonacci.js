@@ -1,3 +1,4 @@
+//FIBONACCI
 function fibsSequence(n) {
   let result = [];
 
