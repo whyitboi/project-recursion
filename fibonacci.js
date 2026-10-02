@@ -50,7 +50,6 @@ function fibNumberRec(n) {
 function fibSequenceRec(n) {
   if (n <= 1) return [0];
   if (n === 2) return [0, 1];
-  console.log("This was printed out recursively");
   if (Number.isInteger(n) && n >= 2) {
     const prev = fibSequenceRec(n - 1);
     const next = prev[prev.length - 1] + prev[prev.length - 2];
