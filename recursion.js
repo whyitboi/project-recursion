@@ -36,23 +36,18 @@ function fibNumberRec(n) {
   if (n === 2) return 1;
 
   if (Number.isInteger(n) && n > 2) {
-    return fibRec(n - 1) + fibRec(n - 2);
+    return fibNumberRec(n - 1) + fibNumberRec(n - 2);
   }
 }
 function fibSequenceRec(n) {
-  let result = [];
-  if (n === 1) result.push(0);
-  // if (n === 2) {
-  //   result.push(0);
-  //   result.push(1);
-  // }
-
+  if (n === 1) return [0];
+  if (n === 2) return [0, 1];
   if (Number.isInteger(n) && n >= 2) {
-    result.push(0);
-    result.push(1);
-    result.push(fibSequenceRec(n - 1));
+    const prev = fibSequenceRec(n - 1);
+    const next = prev[prev.length - 1] + prev[prev.length - 2];
+    return [...prev, next];
   }
   return result;
 }
 
-console.log(fibSequenceRec(2));
+console.log(fibSequenceRec(6));
