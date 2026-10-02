@@ -47,7 +47,6 @@ function fibSequenceRec(n) {
     const next = prev[prev.length - 1] + prev[prev.length - 2];
     return [...prev, next];
   }
-  return result;
 }
 
 console.log(fibSequenceRec(6));
