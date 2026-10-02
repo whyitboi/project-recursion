@@ -48,7 +48,7 @@ function fibNumberRec(n) {
 }
 //Sequence of fibonacci characters up to specified n
 function fibSequenceRec(n) {
-  if (n === 1) return [0];
+  if (n <= 1) return [0];
   if (n === 2) return [0, 1];
   console.log("This was printed out recursively");
   if (Number.isInteger(n) && n >= 2) {
