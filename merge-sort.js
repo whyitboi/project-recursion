@@ -10,21 +10,23 @@ function mergeSort(someArray) {
   function merge(arrayOne, arrayTwo) {
     console.log(arrayOne.concat(arrayTwo));
   }
-  while (lefttHalfArray.length >= 0 || rightHalfArray.length >= 0) {
-    if (lefttHalfArray.length === 0) {
-      result.push(rightHalfArray[0]);
-      rightHalfArray.shift();
-    } else if (rightHalfArray.length === 0) {
-      result.push(lefttHalfArray[0]);
-      lefttHalfArray.shift();
-    }
-    if (lefttHalfArray[0] >= rightHalfArray[0]) {
-      result.push(rightHalfArray[0]);
-      rightHalfArray.shift();
-    } else {
-      result.push(lefttHalfArray[0]);
-      lefttHalfArray.shift();
-    }
+
+  while (lefttHalfArray.length > 0 && rightHalfArray.length > 0) {
+    lefttHalfArray[0] >= rightHalfArray[0]
+      ? result.push(rightHalfArray.shift())
+      : result.push(lefttHalfArray.shift());
+    // if (lefttHalfArray[0] >= rightHalfArray[0]) {
+    //   result.push(rightHalfArray.shift());
+    // } else {
+    //   result.push(lefttHalfArray.shift());
+    // }
+  }
+  if (lefttHalfArray.length === 0 || rightHalfArray.length === 0) {
+    //if i check that one is empty how do I know which one to push
+    // with .shift() to result below? because right now the 0 is being discarded.
+    lefttHalfArray.length > 0
+      ? result.push(lefttHalfArray.shift())
+      : result.push(rightHalfArray.shift());
   }
   //   console.log("Got here");
   return result;
@@ -33,4 +35,4 @@ function mergeSort(someArray) {
   //   mergeSort(lefttHalfArray);
   //   mergeSort(rightHalfArray);
 }
-mergeSort([4, 5, 2, 8, 0]);
+console.log(mergeSort([4, 5, 2, 8, 0]));
