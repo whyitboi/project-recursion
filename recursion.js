@@ -31,7 +31,7 @@ function fibsNumber(n) {
   }
 }
 
-function fibRec(n) {
+function fibNumberRec(n) {
   if (n === 1) return 0;
   if (n === 2) return 1;
 
@@ -39,5 +39,20 @@ function fibRec(n) {
     return fibRec(n - 1) + fibRec(n - 2);
   }
 }
+function fibSequenceRec(n) {
+  let result = [];
+  if (n === 1) result.push(0);
+  // if (n === 2) {
+  //   result.push(0);
+  //   result.push(1);
+  // }
 
-console.log(fibRec(7));
+  if (Number.isInteger(n) && n >= 2) {
+    result.push(0);
+    result.push(1);
+    result.push(fibSequenceRec(n - 1));
+  }
+  return result;
+}
+
+console.log(fibSequenceRec(2));
