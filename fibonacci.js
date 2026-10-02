@@ -1,4 +1,5 @@
 //FIBONACCI
+//Non-recursive fibonacci sequence up to specified n
 function fibsSequence(n) {
   let result = [];
 
@@ -23,6 +24,7 @@ function fibsSequence(n) {
 
   return result;
 }
+//Non-recursive ingle fibonnaci element at n
 function fibsNumber(n) {
   if (n === 1) return 0;
   if (n === 2) return 1;
@@ -35,7 +37,7 @@ function fibsNumber(n) {
     return a[n - 1];
   }
 }
-
+//Single fibonnaci element at n recursively
 function fibNumberRec(n) {
   if (n === 1) return 0;
   if (n === 2) return 1;
@@ -44,9 +46,11 @@ function fibNumberRec(n) {
     return fibNumberRec(n - 1) + fibNumberRec(n - 2);
   }
 }
+//Sequence of fibonacci characters up to specified n
 function fibSequenceRec(n) {
   if (n === 1) return [0];
   if (n === 2) return [0, 1];
+  console.log("This was printed out recursively");
   if (Number.isInteger(n) && n >= 2) {
     const prev = fibSequenceRec(n - 1);
     const next = prev[prev.length - 1] + prev[prev.length - 2];
@@ -54,6 +58,4 @@ function fibSequenceRec(n) {
   }
 }
 
-console.log(fibSequenceRec(6));
-console.log(fibsNumber(5));
-console.log(fibsSequence(6));
+console.log(fibSequenceRec(8));
